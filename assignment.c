@@ -17,7 +17,7 @@ struct node* bucket[SIZE];
 int main(void) {
     int arr[] = {73, 37, 84, 48, 12, 59};
 
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < 6; i++) {
         insert_node(arr[i], hash_code(arr[i]));
     }
 
@@ -41,18 +41,13 @@ void insert_node(int data, int key) {
 void print(void) {
     for (int i = 0; i < SIZE; i++) {
         struct node *current = bucket[i];
-        printf("\n[");
-
-        if (current == NULL) {
-            printf("~");
-        }
    
         while(current != NULL) {
-            printf("(%d)", current->data);
+            printf("%d ", current->data);
             current = current->next;
         }
 	
-        printf("]");
+        printf("\n");
     }
 
     return;
