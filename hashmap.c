@@ -5,11 +5,18 @@
 
 int hash_code(int);
 void insert_node(int, int);
-void print(void);
+
+void print_list(void);
 
 struct node {
     int data;
     struct node *next;
+};
+
+struct heap {
+    int data;
+    struct node* left;
+    struct node* right;
 };
 
 struct node* bucket[SIZE];
@@ -21,7 +28,7 @@ int main(void) {
         insert_node(arr[i], hash_code(arr[i]));
     }
 
-    print();
+    print_list();
 }
 
 int hash_code(int k) {
@@ -38,7 +45,7 @@ void insert_node(int data, int key) {
     return;
 }
 
-void print(void) {
+void print_list(void) {
     for (int i = 0; i < SIZE; i++) {
         struct node *current = bucket[i];
    
