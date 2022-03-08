@@ -13,12 +13,6 @@ struct node {
     struct node *next;
 };
 
-struct heap {
-    int data;
-    struct node* left;
-    struct node* right;
-};
-
 struct node* bucket[SIZE];
 
 int main(void) {
